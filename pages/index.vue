@@ -1,12 +1,6 @@
 <template>
-  <AppCookie />
-  <AppBanner />
   <AppHeader />
-  <AppFeature />
-  <AppNewsletter />
-  <AppTestimonials />
-  <AppPrice />
-  <AppFaq />
+  <AppBlog />
   <AppFooter />
 </template>
 <script setup lang="ts"></script>
