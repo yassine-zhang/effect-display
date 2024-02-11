@@ -1,0 +1,34 @@
+{
+  "name": "nuxt-app",
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.11.2",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
+    "nuxt": "^3.9.3",
+    "nuxt-headlessui": "^1.1.5",
+    "prettier": "3.2.4",
+    "typescript": "^5.3.3",
+    "vue": "^3.4.14",
+    "vue-router": "^4.2.5"
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs,md,ts,vue,json,css}": [
+      "prettier --write"
+    ]
+  },
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "build:github-pages": "bun run build --preset=github_pages",
+    "deploy": "bun run build:github-pages && bunx gh-pages --dotfiles -d .output/public",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "prepare": "husky install"
+  },
+  "type": "module",
+  "dependencies": {
+    "@heroicons/vue": "^2.1.1"
+  }
+}
