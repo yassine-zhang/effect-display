@@ -119,37 +119,6 @@
                         </li>
                       </ul>
                     </li>
-                    <li>
-                      <div
-                        class="text-xs font-semibold leading-6 text-gray-400"
-                      >
-                        Your teams
-                      </div>
-                      <ul role="list" class="-mx-2 mt-2 space-y-1">
-                        <li v-for="team in teams" :key="team.name">
-                          <a
-                            :href="team.href"
-                            :class="[
-                              team.current
-                                ? 'bg-gray-50 text-indigo-600'
-                                : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                              'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
-                            ]"
-                          >
-                            <span
-                              :class="[
-                                team.current
-                                  ? 'text-indigo-600 border-indigo-600'
-                                  : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                                'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white',
-                              ]"
-                              >{{ team.initial }}</span
-                            >
-                            <span class="truncate">{{ team.name }}</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
                     <li class="mt-auto">
                       <a
                         href="#"
@@ -198,8 +167,8 @@
                     :class="[
                       isSelect(item.name)
                         ? 'bg-gray-50 text-indigo-600'
-                        : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                      'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
+                        : 'text-gray-500 hover:text-gray-700 hover:pl-5',
+                      'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold transition-all duration-300',
                     ]"
                   >
                     <component
@@ -207,8 +176,8 @@
                       :class="[
                         isSelect(item.name)
                           ? 'text-indigo-600'
-                          : 'text-gray-400 group-hover:text-indigo-600',
-                        'h-6 w-6 shrink-0',
+                          : 'text-gray-400 group-hover:text-gray-600',
+                        'h-6 w-6 shrink-0 transition-colors duration-300',
                       ]"
                       aria-hidden="true"
                     />
@@ -217,42 +186,13 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <div class="text-xs font-semibold leading-6 text-gray-400">
-                Your teams
-              </div>
-              <ul role="list" class="-mx-2 mt-2 space-y-1">
-                <li v-for="team in teams" :key="team.name">
-                  <a
-                    :href="team.href"
-                    :class="[
-                      team.current
-                        ? 'bg-gray-50 text-indigo-600'
-                        : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                      'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
-                    ]"
-                  >
-                    <span
-                      :class="[
-                        team.current
-                          ? 'text-indigo-600 border-indigo-600'
-                          : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                        'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white',
-                      ]"
-                      >{{ team.initial }}</span
-                    >
-                    <span class="truncate">{{ team.name }}</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
             <li class="mt-auto">
               <a
                 href="#"
-                class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-500 hover:text-gray-700 hover:pl-5 transition-all duration-300"
               >
                 <Cog6ToothIcon
-                  class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                  class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-gray-600 transition-colors duration-300"
                   aria-hidden="true"
                 />
                 Settings
@@ -409,11 +349,6 @@ const navigation = [
   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
   { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
   { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
-];
-const teams = [
-  { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
-  { id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
-  { id: 3, name: "Workcation", href: "#", initial: "W", current: false },
 ];
 const userNavigation = [
   { name: "Your profile", href: "#" },

@@ -28,9 +28,13 @@
               >
               <NuxtLink
                 to="/timeline"
-                class="text-sm font-semibold leading-6 text-gray-900"
-                >时间线 <span aria-hidden="true">→</span></NuxtLink
+                class="flex items-center text-sm font-semibold leading-6 text-gray-900"
               >
+                <span class="hover:mr-1 transition-all duration-300"
+                  >时间线</span
+                >
+                <ChevronRightIcon class="h-5" />
+              </NuxtLink>
             </div>
           </div>
           <img
@@ -46,3 +50,6 @@
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import { ChevronRightIcon } from "@heroicons/vue/24/outline";
+</script>

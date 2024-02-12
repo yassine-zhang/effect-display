@@ -84,7 +84,7 @@ const navigation = {
     { name: "ZDoc博客网站", href: "https://reports.org.cn/" },
     { name: "语雀大赛笔记花园", href: "https://www.yuque.com/newlandiot" },
     {
-      name: "早期博客园文章",
+      name: "早期CSDN文章",
       href: "https://blog.csdn.net/weixin_46679824?spm=1000.2115.3001.5343",
     },
   ],
