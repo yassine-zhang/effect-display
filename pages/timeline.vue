@@ -1,6 +1,6 @@
 <template>
-  <section class="relative min-h-screen">
-    <header class="bg-white">
+  <section class="relative min-h-screen bg-gradient-to-b from-indigo-100/20">
+    <header class="relative z-50 bg-white border-b">
       <nav
         class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -84,7 +84,7 @@
       </Dialog>
     </header>
     <div
-      class="fixed inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
+      class="fixed inset-y-0 right-1/2 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
       aria-hidden="true"
     />
     <div class="m-auto max-w-lg flow-root py-12 px-5">

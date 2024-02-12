@@ -75,13 +75,13 @@
               </TransitionChild>
               <!-- Sidebar component, swap this element with another sidebar if you like -->
               <div
-                class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10"
+                class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4 ring-1 ring-white/10"
               >
                 <div class="flex h-16 shrink-0 items-center">
                   <NuxtLink to="/">
                     <img
                       class="h-8 w-auto"
-                      src="https://hc1319-1300215870.file.myqcloud.com/img/logos/mark.svg?color=indigo&shade=500"
+                      src="/favicon.svg"
                       alt="Your Company"
                     />
                   </NuxtLink>
@@ -99,14 +99,19 @@
                             :to="item.href"
                             :class="[
                               isSelect(item.name)
-                                ? 'bg-gray-800 text-white'
-                                : 'text-gray-400 hover:text-white hover:bg-gray-800',
+                                ? 'bg-gray-50 text-indigo-600'
+                                : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
                               'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                             ]"
                           >
                             <component
                               :is="item.icon"
-                              class="h-6 w-6 shrink-0"
+                              :class="[
+                                isSelect(item.name)
+                                  ? 'text-indigo-600'
+                                  : 'text-gray-400 group-hover:text-indigo-600',
+                                'h-6 w-6 shrink-0',
+                              ]"
                               aria-hidden="true"
                             />
                             {{ item.name }}
@@ -126,13 +131,18 @@
                             :href="team.href"
                             :class="[
                               team.current
-                                ? 'bg-gray-800 text-white'
-                                : 'text-gray-400 hover:text-white hover:bg-gray-800',
+                                ? 'bg-gray-50 text-indigo-600'
+                                : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
                               'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                             ]"
                           >
                             <span
-                              class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white"
+                              :class="[
+                                team.current
+                                  ? 'text-indigo-600 border-indigo-600'
+                                  : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
+                                'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white',
+                              ]"
                               >{{ team.initial }}</span
                             >
                             <span class="truncate">{{ team.name }}</span>
@@ -143,10 +153,10 @@
                     <li class="mt-auto">
                       <a
                         href="#"
-                        class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
+                        class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
                       >
                         <Cog6ToothIcon
-                          class="h-6 w-6 shrink-0"
+                          class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
                           aria-hidden="true"
                         />
                         Settings
@@ -167,15 +177,11 @@
     >
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div
-        class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4"
+        class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4"
       >
         <div class="flex h-16 shrink-0 items-center">
           <NuxtLink to="/">
-            <img
-              class="h-8 w-auto"
-              src="https://hc1319-1300215870.file.myqcloud.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company"
-            />
+            <img class="h-8 w-auto" src="/favicon.svg" alt="Your Company" />
           </NuxtLink>
         </div>
         <nav class="flex flex-1 flex-col">
@@ -191,14 +197,19 @@
                     :to="item.href"
                     :class="[
                       isSelect(item.name)
-                        ? 'bg-gray-800 text-white'
-                        : 'text-gray-400 hover:text-white hover:bg-gray-800',
+                        ? 'bg-gray-50 text-indigo-600'
+                        : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
                       'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                     ]"
                   >
                     <component
                       :is="item.icon"
-                      class="h-6 w-6 shrink-0"
+                      :class="[
+                        isSelect(item.name)
+                          ? 'text-indigo-600'
+                          : 'text-gray-400 group-hover:text-indigo-600',
+                        'h-6 w-6 shrink-0',
+                      ]"
                       aria-hidden="true"
                     />
                     {{ item.name }}
@@ -216,13 +227,18 @@
                     :href="team.href"
                     :class="[
                       team.current
-                        ? 'bg-gray-800 text-white'
-                        : 'text-gray-400 hover:text-white hover:bg-gray-800',
+                        ? 'bg-gray-50 text-indigo-600'
+                        : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
                       'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
                     ]"
                   >
                     <span
-                      class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white"
+                      :class="[
+                        team.current
+                          ? 'text-indigo-600 border-indigo-600'
+                          : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
+                        'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white',
+                      ]"
                       >{{ team.initial }}</span
                     >
                     <span class="truncate">{{ team.name }}</span>
@@ -233,9 +249,12 @@
             <li class="mt-auto">
               <a
                 href="#"
-                class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
+                class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
               >
-                <Cog6ToothIcon class="h-6 w-6 shrink-0" aria-hidden="true" />
+                <Cog6ToothIcon
+                  class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                  aria-hidden="true"
+                />
                 Settings
               </a>
             </li>
@@ -297,14 +316,14 @@
                   <span class="sr-only">Open user menu</span>
                   <img
                     class="h-8 w-8 rounded-full bg-gray-50"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    src="/user/c4cfa12257f23b676b304a78570f9a77f5cd1ff3.jpg@240w_240h_1c_1s_!web-avatar-space-header.avif"
                     alt=""
                   />
                   <span class="hidden lg:flex lg:items-center">
                     <span
                       class="ml-4 text-sm font-semibold leading-6 text-gray-900"
                       aria-hidden="true"
-                      >Tom Cook</span
+                      >Yassine Zhang</span
                     >
                     <ChevronDownIcon
                       class="ml-2 h-5 w-5 text-gray-400"

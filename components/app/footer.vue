@@ -6,7 +6,7 @@
         <div class="space-y-8">
           <img class="h-7" src="/favicon.svg" alt="Company name" />
           <p class="text-sm leading-6 text-gray-600">
-            一本书、一杯咖啡和一台电脑足矣。
+            一本书、一杯咖啡、一台电脑足矣。
           </p>
           <div class="flex space-x-6">
             <a
@@ -81,7 +81,7 @@ import github from "/components/icons/github.vue";
 
 const navigation = {
   blogs: [
-    { name: "ZDOC博客网站", href: "https://reports.org.cn/" },
+    { name: "ZDoc博客网站", href: "https://reports.org.cn/" },
     { name: "语雀大赛笔记花园", href: "https://www.yuque.com/newlandiot" },
     {
       name: "早期博客园文章",
@@ -89,7 +89,7 @@ const navigation = {
     },
   ],
   concat: [
-    { name: "QQ：57878778", href: "#" },
+    { name: "QQ: 57878778", href: "#" },
     { name: "Tel: 16599999215", href: "#" },
   ],
   social: [
