@@ -96,65 +96,86 @@
         src="/user/clock.avif"
       />
     </div>
-    <div class="m-auto max-w-3xl flow-root pt-5 pb-12 px-5">
-      <p
-        class="relative border-l-2 border-red-600 pl-2 text-red-500 font-bold font-serif text-sm"
-      >
+    <div
+      class="flex flex-col gap-3 m-auto max-w-3xl pt-5 pb-16 px-5 relative text-sm"
+    >
+      <h2 class="text-3xl">迈入IT计算机行业 ~ Present</h2>
+      <div class="flex gap-5 text-gray-500 -mt-2">
+        <p>编辑：张永鑫/全栈工程师-张工</p>
+        <p>最后更新时间：2024-02-13 19:10</p>
+      </div>
+      <p class="border-l-2 border-red-600 pl-2 text-red-500 font-bold">
         时间线有一定误差，一切以实际为准
       </p>
-      <div class="mt-8 relative font-serif">
-        <p class="text-xl font-bold mb-4">时间节点类型定义</p>
-        <div class="flex gap-5 flex-wrap">
-          <div class="flex items-center gap-2">
-            <span
-              :class="[
-                tlc.school.iconBackground,
-                'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
-              ]"
-            >
-              <component
-                :is="tlc.school.icon"
-                class="h-5 w-5 text-white"
-                aria-hidden="true"
-              />
-            </span>
-            学校 - 物联网经历
-          </div>
-          <div class="flex items-center gap-2">
-            <span
-              :class="[
-                tlc.failed.iconBackground,
-                'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
-              ]"
-            >
-              <component
-                :is="tlc.failed.icon"
-                class="h-5 w-5 text-white"
-                aria-hidden="true"
-              />
-            </span>
-            放弃 - 游戏开发
-          </div>
-          <div class="flex items-center gap-2">
-            <span
-              :class="[
-                tlc.up.iconBackground,
-                'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
-              ]"
-            >
-              <component
-                :is="tlc.up.icon"
-                class="h-5 w-5 text-white"
-                aria-hidden="true"
-              />
-            </span>
-            正轨 - 全栈开发
-          </div>
+      <p class="indent-4 hyphens-auto text-lg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, iusto.
+        Perferendis minus minima ullam sit fugiat est dolores cum. Facilis at
+        quibusdam numquam tempora ullam explicabo. Neque harum quam quibusdam!
+        Esse hic voluptate ipsum magnam delectus nemo perspiciatis doloribus
+        animi facere reprehenderit omnis amet nostrum distinctio corporis, optio
+        quisquam officiis neque aspernatur tempora excepturi rem natus. Aperiam
+        quasi eaque neque.
+      </p>
+      <div class="flex mt-12 gap-5 flex-wrap text-sm">
+        <div class="flex items-center gap-2">
+          <span
+            :class="[
+              tlc.school.iconBackground,
+              'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
+            ]"
+          >
+            <component
+              :is="tlc.school.icon"
+              class="h-5 w-5 text-white"
+              aria-hidden="true"
+            />
+          </span>
+          学校 - 物联网经历
+        </div>
+        <div class="flex items-center gap-2">
+          <span
+            :class="[
+              tlc.failed.iconBackground,
+              'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
+            ]"
+          >
+            <component
+              :is="tlc.failed.icon"
+              class="h-5 w-5 text-white"
+              aria-hidden="true"
+            />
+          </span>
+          放弃 - 游戏开发
+        </div>
+        <div class="flex items-center gap-2">
+          <span
+            :class="[
+              tlc.up.iconBackground,
+              'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
+            ]"
+          >
+            <component
+              :is="tlc.up.icon"
+              class="h-5 w-5 text-white"
+              aria-hidden="true"
+            />
+          </span>
+          正轨 - 全栈开发
         </div>
       </div>
-      <ul role="list" class="-mb-8 mt-36">
+      <div class="relative">
+        <div class="absolute inset-0 flex items-center" aria-hidden="true">
+          <div class="w-full border-t border-gray-300" />
+        </div>
+        <div class="relative flex justify-center">
+          <span class="bg-white px-2 text-sm text-gray-500">timeline</span>
+        </div>
+      </div>
+      <ul role="list" class="-mb-8 mt-2">
         <li v-for="(event, eventIdx) in timeline" :key="event.id">
-          <div class="relative pb-8">
+          <div
+            class="relative pb-8 rounded-2xl hover:bg-gray-200 hover:scale-105 transition-all"
+          >
             <span
               v-if="eventIdx !== timeline.length - 1"
               class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200"
@@ -179,12 +200,16 @@
                 <div>
                   <p class="text-sm text-gray-500">
                     {{ event.content }}
-                    <a :href="event.href" class="font-medium text-gray-900">{{
-                      event.target
-                    }}</a>
+                    <a
+                      :href="event.href"
+                      class="cursor-default font-medium text-gray-900"
+                      >{{ event.target }}</a
+                    >
                   </p>
                 </div>
-                <div class="whitespace-nowrap text-right text-sm text-gray-500">
+                <div
+                  class="whitespace-nowrap text-right text-sm text-gray-500 pr-2"
+                >
                   <time :datetime="event.datetime">{{ event.datetime }}</time>
                 </div>
               </div>
