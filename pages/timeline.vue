@@ -100,14 +100,14 @@
       class="flex flex-col gap-3 m-auto max-w-3xl pt-5 pb-16 px-5 relative text-sm"
     >
       <h2 class="text-3xl">迈入IT计算机行业 ~ Present</h2>
-      <div class="flex gap-5 text-gray-500 -mt-2">
+      <div class="flex flex-col md:flex-row md:gap-5 text-gray-500 -mt-2">
         <p>编辑：张永鑫/全栈工程师-张工</p>
         <p>最后更新时间：2024-02-13 19:10</p>
       </div>
       <p class="border-l-2 border-red-600 pl-2 text-red-500 font-bold">
         时间线有一定误差，一切以实际为准
       </p>
-      <p class="indent-4 hyphens-auto text-lg">
+      <p class="indent-4 text-lg">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, iusto.
         Perferendis minus minima ullam sit fugiat est dolores cum. Facilis at
         quibusdam numquam tempora ullam explicabo. Neque harum quam quibusdam!
@@ -200,10 +200,10 @@
                 <div>
                   <p class="text-sm text-gray-500">
                     {{ event.content }}
-                    <a
+                    <span
                       :href="event.href"
-                      class="cursor-default font-medium text-gray-900"
-                      >{{ event.target }}</a
+                      class="font-medium text-gray-900"
+                      >{{ event.target }}</span
                     >
                   </p>
                 </div>
