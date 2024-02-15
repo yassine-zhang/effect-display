@@ -331,38 +331,29 @@
 <script setup>
 import { ref } from "vue";
 import {
-  Dialog,
-  DialogPanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  TransitionChild,
-  TransitionRoot,
-} from "@headlessui/vue";
-import {
   Bars3Icon,
   BellIcon,
-  CalendarIcon,
-  ChartPieIcon,
   Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
   XMarkIcon,
+  FingerPrintIcon,
+  UsersIcon,
 } from "@heroicons/vue/24/outline";
 import { ChevronDownIcon, MagnifyingGlassIcon } from "@heroicons/vue/20/solid";
+
+definePageMeta({
+  middleware: "dashboard-index",
+});
 
 const route = useRoute();
 
 const navigation = [
-  { name: "Dashboard", href: "/dashboard", icon: HomeIcon, current: true },
-  { name: "Team", href: "/dashboard/team", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+  {
+    name: "行为验证",
+    href: "/dashboard/behaviorVerification",
+    icon: FingerPrintIcon,
+    current: true,
+  },
+  { name: "团队", href: "/dashboard/team", icon: UsersIcon, current: false },
 ];
 const userNavigation = [
   { name: "Your profile", href: "#" },
@@ -378,7 +369,10 @@ const commandPalettesShortcut = ref("K");
 function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
-const selectedTab = ref(capitalizeFirstLetter(route.fullPath.split("/").pop()));
+
+const selectedTab = ref(
+  navigation.filter((val) => val.href === route.fullPath)[0].name,
+);
 const isSelect = (k) => selectedTab.value === k;
 const selectTab = (k) => {
   selectedTab.value = k;
@@ -400,9 +394,5 @@ onMounted(() => {
       commandPalettes.value = !commandPalettes.value;
     }
   });
-
-  // 检测选择的标签是否为空，空的话直接导向到第一个
-  selectedTab.value =
-    selectedTab.value === "" ? "Dashboard" : selectedTab.value;
 });
 </script>

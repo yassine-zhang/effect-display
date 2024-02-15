@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { PropType } from "vue";
+import { ChevronLeftIcon } from "@heroicons/vue/24/outline";
 
 interface ErrorInterface {
   url: string;
@@ -48,14 +49,16 @@ const handleError = () => clearError({ redirect: "/" });
           {{ error!.statusMessage }}
         </h1>
         <p class="mt-6 text-base leading-7 text-gray-600">
-          Sorry, we couldn’t find the page you’re looking for.
+          抱歉，我们找不到您要找的页面。
         </p>
         <div class="mt-10">
           <a
             @click="handleError"
-            class="cursor-pointer text-sm font-semibold leading-7 text-indigo-600"
-            ><span aria-hidden="true">&larr;</span> Back to home</a
+            class="flex items-center cursor-pointer text-sm font-semibold leading-7 text-indigo-600"
           >
+            <ChevronLeftIcon class="w-5" />
+            <span>返回主页</span>
+          </a>
         </div>
       </div>
     </main>
