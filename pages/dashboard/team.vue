@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-96 bg-white rounded-sm shadow-md py-4 px-3">
+  <section>
     <h2>
       哦no~，抱歉我并没有什么团队，只是个人开发，请求大佬收编！！！&#129392;
     </h2>
@@ -9,3 +9,8 @@
     </p>
   </section>
 </template>
+<script setup lang="ts">
+definePageMeta({
+  id: 2,
+});
+</script>

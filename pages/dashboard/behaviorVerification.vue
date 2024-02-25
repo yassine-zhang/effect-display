@@ -1,5 +1,8 @@
 <template>
-  <section class="min-h-96 bg-white rounded-sm shadow-md py-4 px-3">
-    行为验证模块
-  </section>
+  <section>行为验证模块</section>
 </template>
+<script setup lang="ts">
+definePageMeta({
+  id: 1,
+});
+</script>
